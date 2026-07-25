@@ -1,23 +1,3 @@
-"""
-VECTOR STORE SERVICE MODULE
-========================
-
-This service builds and queries the FAISS vector index used for context retrieval.
-Learning data (database/learning_data/*.txt) and past chats (database/chat_data/*.json)
-are loaded at startup, split into chunks, embedded with huggingface, and stored in FAISS.
-When the user asks a question we embed it and retrieve the k most similar chunks; only
-those chunks are sent to the LLM, so token usage is bounded.
-
-LIFECYCLE:
-  - create_vector_store(): Load all .txt and .json, chunk, embed, build FAISS, save to disk.
-    Called once at startup. Restart the server after adding new .txt files so they are included.
-  - get_retriever(k): Return a retriever that fatches k nearest chunks for a query string.
-  - save_vector_store(): Write the current FAISS index to database/vector_store/ (called after create).
-
-Embeddings run locally (sentence-transformers): no extra API key. Groq and Realtime services
-call get_retriever() for every request to get context.
-"""
-
 import json
 import logging
 from pathlib import Path
@@ -45,11 +25,7 @@ logger = logging.getLogger("J.A.R.V.I.S")
 # =========================================================================
 
 class VectorStoreService:
-    """
-    Builds a FAISS index from learning_data .txt files and chat_data .json files,
-    and provides a retriever to fatch the k most relevant chunks for a query.
-    """
-
+    
     def __init__(self):
         """Creat the embedding model (local) and text splitter; vector_store is set in create_vector_store()."""
         # Embedding run locally (no API key); used to convert text into vectors for similarity search.
