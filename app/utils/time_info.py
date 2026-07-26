@@ -1,14 +1,4 @@
-
-
-
-
-
-
-
-
-
 import datetime
-
 
 def get_time_information() -> str:
 
