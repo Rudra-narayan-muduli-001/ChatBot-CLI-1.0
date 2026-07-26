@@ -1,15 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
 import logging
 import time
 from typing import TypeVar, Callable
@@ -31,7 +19,7 @@ def with_retry(
 
 
     last_exception = None
-    dely = initial_delay
+    delay = initial_delay
 
     for attempt in range(max_retries):
         try:
