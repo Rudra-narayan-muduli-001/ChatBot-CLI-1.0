@@ -1,6 +1,24 @@
-# J.A.R.V.I.S — AI Chatbot CLI
+   ╔═══════════════════════════════════════════════════════════════════╗
+   ║                                                                   ║
+   ║      ██████╗██╗  ██╗ █████╗ ████████╗██████╗  ██████╗ ████████╗   ║
+   ║     ██╔════╝██║  ██║██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗╚══██╔══╝   ║
+   ║     ██║     ███████║███████║   ██║   ██████╔╝██║   ██║   ██║      ║
+   ║     ██║     ██╔══██║██╔══██║   ██║   ██╔══██╗██║   ██║   ██║      ║
+   ║     ╚██████╗██║  ██║██║  ██║   ██║   ██████╔╝╚██████╔╝   ██║      ║
+   ║      ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═════╝  ╚═════╝    ╚═╝      ║
+   ║                                                                   ║
+   ║                    ██████╗██╗     ██╗                             ║
+   ║                   ██╔════╝██║     ██║                             ║
+   ║                   ██║     ██║     ██║                             ║
+   ║                   ██║     ██║     ██║                             ║
+   ║                   ╚██████╗███████╗██║                             ║
+   ║                    ╚═════╝╚══════╝╚═╝                             ║
+   ║                                                                   ║
+   ╚═══════════════════════════════════════════════════════════════════╝
 
-A personal AI assistant backend with General Chat (pure LLM) and Realtime Chat (with live web search) modes, powered by Groq and Tavily.
+# ChatBot CLI
+
+A personal AI assistant backend with General Chat and Realtime Chat (with live web search) modes, powered by Groq and Tavily.
 
 ## Features
 
@@ -14,7 +32,7 @@ A personal AI assistant backend with General Chat (pure LLM) and Realtime Chat (
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ChatBot-CLI.git
+git clone https://github.com/Rudra-narayan-muduli-001/ChatBot-CLI-1.0.git
 cd ChatBot-CLI
 ```
 
@@ -46,7 +64,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Wait until you see the server startup message (e.g. `Uvicorn running on http://0.0.0.0:8000`).
+Wait until you see the server startup message (e.g. `INFO:     Application startup complete.`).
 
 ### 4. Run the CLI client (in a separate terminal)
 
