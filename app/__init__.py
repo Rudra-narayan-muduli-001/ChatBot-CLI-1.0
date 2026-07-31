@@ -1,8 +1,7 @@
 """
-J.A.R.V.I.S APPLICATION PACKAGE
-===============================
+FASTAPI APPLICATION PACKAGE
 
-This directoey is the main Python package for the J.A.R.V.I.S backend.
+This directory is the main Python package for the ChatBot CLI backend.
 The presence of __init__.py makes Python treat 'app' as a package, so you can:
 
     from app.main import app
@@ -12,8 +11,8 @@ The presence of __init__.py makes Python treat 'app' as a package, so you can:
 FILE STRUCTURE:
   app/
     __init__.py     - This file marks app as a package.
-    main.py         - FastAPI app and all HTTP endpoints {/chat, /chat/realtime, /health , etc.}.
-    models.py       - Pydantic models for API requests and initial chat storage.
-    services/       - Business logic: chat sessions, Groq LLM, realtime (Tavily + Groq), vector store.
-    utils/          - Helpers: retry with backoff, current date/time for the LLM prompt.
+    main.py         - FastAPI app and all HTTP endpoints.
+    models.py       - Pydantic models for API requests and chat storage.
+    services/       - Business logic: chat sessions, Groq LLM, realtime, vector store.
+    utils/          - Helpers: retry with backoff, current date/time.
 """
