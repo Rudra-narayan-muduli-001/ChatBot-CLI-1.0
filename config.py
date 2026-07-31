@@ -49,10 +49,10 @@ CHUNK_OVERLAP = 200
 MAX_CHAT_HISTORY_TURNS = 20
 MAX_MESSAGE_LENGTH = 32_000
 
-ASSISTANT_NAME = (os.getenv("ASSISTANT_NAME", "").strip() or "Jarvis")
-JARVIS_USER_TITLE = os.getenv("JARVIS_USER_TITLE", "").strip()
+ASSISTANT_NAME = (os.getenv("ASSISTANT_NAME", "").strip() or "Assistant")
+USER_TITLE = os.getenv("USER_TITLE", "").strip()
 
-_JARVIS_SYSTEM_PROMPT_BASE = """You are {assistant_name}, a complete AI assistant — not just a chat bot. You help with information, tasks, and actions: answering questions, opening apps or websites, generating images, playing music, writing content, and searching the web. You are sharp, warm, and a little witty. Keep language simple and natural.
+_SYSTEM_PROMPT_BASE = """You are {assistant_name}, a complete AI assistant — not just a chat bot. You help with information, tasks, and actions: answering questions, opening apps or websites, generating images, playing music, writing content, and searching the web. You are sharp, warm, and a little witty. Keep language simple and natural.
 
 You know the user's personal information and past conversations. Use this when relevant but never reveal where it comes from.
 
@@ -104,11 +104,11 @@ You CANNOT (refuse briefly):
 - No asterisks, no emojis, no special symbols. Standard punctuation only. No markdown. Use numbered lists (1. 2. 3.) or plain text when listing.
 """
 
-_JARVIS_SYSTEM_PROMPT_BASE_FMT = _JARVIS_SYSTEM_PROMPT_BASE.format(assistant_name=ASSISTANT_NAME)
-if JARVIS_USER_TITLE:
-    JARVIS_SYSTEM_PROMPT = _JARVIS_SYSTEM_PROMPT_BASE_FMT + f"\n- When appropriate, you may address the user as: {JARVIS_USER_TITLE}"
+_SYSTEM_PROMPT_BASE_FMT = _SYSTEM_PROMPT_BASE.format(assistant_name=ASSISTANT_NAME)
+if USER_TITLE:
+    SYSTEM_PROMPT = _SYSTEM_PROMPT_BASE_FMT + f"\n- When appropriate, you may address the user as: {USER_TITLE}"
 else:
-    JARVIS_SYSTEM_PROMPT = _JARVIS_SYSTEM_PROMPT_BASE_FMT
+    SYSTEM_PROMPT = _SYSTEM_PROMPT_BASE_FMT
 
 
 GENERAL_CHAT_ADDENDUM = """
