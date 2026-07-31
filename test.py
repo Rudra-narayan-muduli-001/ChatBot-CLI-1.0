@@ -6,7 +6,7 @@ from uuid import uuid4
 try:
     from config import ASSISTANT_NAME
 except ImportError:
-    ASSISTANT_NAME = "Jarvis"
+    ASSISTANT_NAME = "Assistant"
 
 BASE_URL = "http://localhost:8000"
 SESSION_ID = None
@@ -15,7 +15,7 @@ CURRENT_MODE = None
 
 def print_header():
     print("\n" + "="*60)
-    print("J.A.R.V.I.S - General & Realtime Chat")
+    print("ChatBot CLI - General & Realtime Chat")
     print("="*60)
     print("\nModes:")
     print("  1 = General Chat (pure LLM, no web search)")
