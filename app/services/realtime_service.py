@@ -7,12 +7,12 @@ from app.services.groq_service import GroqService, escape_curly_braces
 from app.services.vector_store import VectorStoreService
 from app.utils.time_info import get_time_information
 from app.utils.retry import with_retry
-from config import JARVIS_SYSTEM_PROMPT
+from config import SYSTEM_PROMPT
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
 
 
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 
 class RealtimeGroqService(GroqService):
@@ -87,7 +87,7 @@ class RealtimeGroqService(GroqService):
                 logger.warning("Vector store retrieval failed, using empty context: %s", retrieval_err)
 
             time_info = get_time_information()
-            system_message = JARVIS_SYSTEM_PROMPT + f"\n\nCurrent time and date: {time_info}"
+            system_message = SYSTEM_PROMPT + f"\n\nCurrent time and date: {time_info}"
 
             if search_results:
                 escaped_search_results = escape_curly_braces(search_results)

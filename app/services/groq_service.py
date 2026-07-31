@@ -5,11 +5,11 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 import logging
 
-from config import GROQ_API_KEYS, JARVIS_SYSTEM_PROMPT, GROQ_MODEL
+from config import GROQ_API_KEYS, SYSTEM_PROMPT, GROQ_MODEL
 from app.services.vector_store import VectorStoreService
 from app.utils.time_info import get_time_information
 
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 
 def escape_curly_braces(text: str) -> str:
@@ -106,7 +106,7 @@ class GroqService:
                 logger.warning("Vectore store retrieval failed, using empty context: %s", retrieval_err)
 
             time_info = get_time_information()
-            system_message = JARVIS_SYSTEM_PROMPT + f"\n\nCurrent time and date: {time_info}"
+            system_message = SYSTEM_PROMPT + f"\n\nCurrent time and date: {time_info}"
             if context:
                 system_message += f"\n\nRelevant context from your learning data and past conversations:\n{escape_curly_braces(context)}"
 

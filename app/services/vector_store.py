@@ -17,7 +17,7 @@ from config import (
 )
 
 
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 
 class VectorStoreService:

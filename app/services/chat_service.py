@@ -11,7 +11,7 @@ from app.services.groq_service import GroqService
 from app.services.realtime_service import RealtimeGroqService
 
 
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 SAVE_EVERY_IN_CHUNKS = 5
 
