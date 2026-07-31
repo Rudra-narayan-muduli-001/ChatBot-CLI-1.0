@@ -31,7 +31,7 @@ logging.basicConfig(
     format='%(asctime)s | %(levelname)-8s | %(name)-20s | %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 
 vector_store_service: VectorStoreService = None
@@ -43,18 +43,23 @@ chat_service: ChatService = None
 def print_titel():
     title = """
 
-   ╔══════════════════════════════════════════════════════════╗
-   ║                                                          ║
-   ║         ██╗ █████╗ ██████╗ ██╗   ██╗██╗███████╗          ║
-   ║         ██║██╔══██╗██╔══██╗██║   ██║██║██╔════╝          ║
-   ║         ██║███████║██████╔╝██║   ██║██║███████╗          ║
-   ║    ██   ██║██╔══██║██╔══██╗╚██╗ ██╔╝██║╚════██║          ║
-   ║    ╚█████╔╝██║  ██║██║  ██║ ╚████╔╝ ██║███████║          ║
-   ║     ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝          ║
-   ║                                                          ║
-   ║        Just A Rather Very Intelligent System             ║
-   ║                                                          ║
-   ╚══════════════════════════════════════════════════════════╝
+   ╔═══════════════════════════════════════════════════════════════════╗
+   ║                                                                   ║
+   ║      ██████╗██╗  ██╗ █████╗ ████████╗██████╗  ██████╗ ████████╗   ║
+   ║     ██╔════╝██║  ██║██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗╚══██╔══╝   ║
+   ║     ██║     ███████║███████║   ██║   ██████╔╝██║   ██║   ██║      ║
+   ║     ██║     ██╔══██║██╔══██║   ██║   ██╔══██╗██║   ██║   ██║      ║
+   ║     ╚██████╗██║  ██║██║  ██║   ██║   ██████╔╝╚██████╔╝   ██║      ║
+   ║      ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═════╝  ╚═════╝    ╚═╝      ║
+   ║                                                                   ║
+   ║                    ██████╗██╗     ██╗                             ║
+   ║                   ██╔════╝██║     ██║                             ║
+   ║                   ██║     ██║     ██║                             ║
+   ║                   ██║     ██║     ██║                             ║
+   ║                   ╚██████╗███████╗██║                             ║
+   ║                    ╚═════╝╚══════╝╚═╝                             ║
+   ║                                                                   ║
+   ╚═══════════════════════════════════════════════════════════════════╝
 
     """
     print(title)
@@ -66,7 +71,7 @@ async def lifespan(app: FastAPI):
 
     print_titel()
     logger.info("=" * 60)
-    logger.info("J.A.R.V.I.S - Starting Up...")
+    logger.info("ChatBot CLI - Starting Up...")
     logger.info("=" * 60)
 
     try:
@@ -94,14 +99,14 @@ async def lifespan(app: FastAPI):
         logger.info("   - Groq AI (Realtime): Ready")
         logger.info("   - Chat Service: Ready")
         logger.info("=" * 60)
-        logger.info("J.A.R.V.I.S is online and ready!")
+        logger.info("ChatBot CLI is online and ready!")
         logger.info("API: http://localhost:8000")
         logger.info("Docs: http://localhost:8000/docs")
         logger.info("=" * 60)
 
         yield
 
-        logger.info("\nShutting down J.A.R.V.I.S...")
+        logger.info("\nShutting down ChatBot CLI...")
         if chat_service:
             for session_id in list(chat_service.sessions.keys()):
                 chat_service.save_chat_session(session_id)
@@ -113,8 +118,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="J.A.R.V.I.S API",
-    description="Just A Rather Very Intelligent System",
+    title="ChatBot CLI API",
+    description="ChatBot CLI Backend",
     lifespan=lifespan
 )
 
@@ -130,7 +135,7 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {
-        "message": "J.A.R.V.I.S API",
+        "message": "ChatBot CLI API",
         "endpoints": {
             "/chat": "General chat (pure LLM, no web search)",
             "/chat/realtime": "Realtime chat (with Tavily search)",
