@@ -3,7 +3,7 @@ import time
 from typing import TypeVar, Callable
 
 
-logger = logging.getLogger("J.A.R.V.I.S")
+logger = logging.getLogger(__name__)
 
 
 T = TypeVar("T")
