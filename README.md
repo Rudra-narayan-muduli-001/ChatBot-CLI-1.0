@@ -123,18 +123,35 @@ curl -X POST http://localhost:8000/chat \
 
 ##  Configuration (`.env`)
 
-| Variable | Required | Default | Description |
-|----------|:--------:|---------|-------------|
-| `GROQ_API_KEY` | ✅ | — | Primary Groq key ([get one here](https://console.groq.com)) |
-| `GROQ_API_KEY_2, _3, ...` | ❌ | — | Extra keys for fallback / round-robin |
-| `GROQ_MODEL` | ❌ | `llama-3.3-70b-versatile` | LLM model to use |
-| `TAVILY_API_KEY` | ❌* | — | Required only for Realtime web search ([tavily.com](https://tavily.com)) |
-| `TTS_VOICE` | ❌ | `en-GB-RyanNeural` | Edge TTS voice (see `edge-tts --list-voices`) |
-| `TTS_RATE` | ❌ | `+22%` | TTS speech speed |
-| `ASSISTANT_NAME` | ❌ | `Assistant` | Name used in replies |
-| `USER_TITLE` | ❌ | — | Optional title to address you by |
+Create your `.env` from the template and fill in your values:
 
-\* Realtime mode still works without `TAVILY_API_KEY`, but web search is disabled.
+```bash
+cp .env.example .env
+```
+
+A minimal working `.env` looks like this:
+
+```dotenv
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+### Required
+
+| Variable | Description |
+|----------|-------------|
+| `GROQ_API_KEY` | Your Groq API key — get one free at [console.groq.com](https://console.groq.com) |
+
+### Optional
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `GROQ_API_KEY_2`, `_3`, ... | — | Extra Groq keys for automatic fallback / round-robin |
+| `GROQ_MODEL` | `llama-3.3-70b-versatile` | LLM model used for chat |
+| `TAVILY_API_KEY` | — | Enables live web search in Realtime mode ([tavily.com](https://tavily.com)). Realtime chat still works without it, just without search. |
+| `TTS_VOICE` | `en-GB-RyanNeural` | Edge TTS voice (list all with `edge-tts --list-voices`) |
+| `TTS_RATE` | `+22%` | TTS speech speed adjustment |
+| `ASSISTANT_NAME` | `Assistant` | Name the assistant uses in replies |
+| `USER_TITLE` | — | Optional title to address you by (e.g. `Sir`) |
 
 ---
 
