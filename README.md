@@ -1,10 +1,10 @@
-![ChatBot CLI Banner](https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=ChatBot%20CLI&fontAlignY=40&desc=Your%20Personal%20AI%20Assistant%20—%20General%20%26%20Realtime%20Chat)
+![ChatBot CLI Banner](https://capsule-render.vercel.app/api?type=waving&amp;height=200&amp;color=gradient&amp;text=ChatBot%20CLI&amp;fontAlignY=40&amp;desc=Your%20Personal%20AI%20Assistant%20—%20General%20%26%20Realtime%20Chat)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9+-blue.svg?logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/FastAPI-0.11+-009688.svg?logo=fastapi&logoColor=white" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/LLM-Groq%20(LLaMA%203.3)-f55036.svg?logo=groq&logoColor=white" alt="Groq"/>
-  <img src="https://img.shields.io/badge/Search-Tavily-1b3d63.svg?logo=tavily&logoColor=white" alt="Tavily"/>
+  <img src="https://img.shields.io/badge/Python-3.9+-blue.svg?logo=python&amp;logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/FastAPI-0.11+-009688.svg?logo=fastapi&amp;logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/LLM-Groq%20(LLaMA%203.3)-f55036.svg?logo=groq&amp;logoColor=white" alt="Groq"/>
+  <img src="https://img.shields.io/badge/Search-Tavily-1b3d63.svg?logo=tavily&amp;logoColor=white" alt="Tavily"/>
   <img src="https://img.shields.io/badge/Vector%20DB-FAISS-8A2BE2.svg" alt="FAISS"/>
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/>
 </p>
